@@ -8,7 +8,7 @@ public class LenthInformApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LenthInformApplication.class, args);
-		System.out.println("ujuj");
+
 	}
 
 }
