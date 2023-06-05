@@ -110,7 +110,7 @@
             success: function (data) {
                 var result = "";
                 $.each(data, function (id, news) {
-                    result += '<div class="tecnews"><h1>' + news.title + '</h1>' + '<h3>' + news.text + '</h3></div>';
+                    result += '<div class="tecnews"><h1>' + news.title + '</h1>' + '<h3>' + news.description + '</h3></div>';
                 });
                 $('.news-container').html(result);
             },

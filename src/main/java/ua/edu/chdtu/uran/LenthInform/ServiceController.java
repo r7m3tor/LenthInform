@@ -1,28 +1,41 @@
 package ua.edu.chdtu.uran.LenthInform;
 
 import jakarta.servlet.http.HttpSession;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+import ua.edu.chdtu.uran.LenthInform.db.NewsRepository;
 import ua.edu.chdtu.uran.LenthInform.model.News;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")
 public class ServiceController {
+
+    private final NewsRepository repository;
+
+    public ServiceController(NewsRepository repository) {
+        this.repository = repository;
+    }
+
+    @RequestMapping("/addNew")
+    @Transactional
+    @PutMapping
+    public Mono<News> addNew(HttpSession httpSession, @RequestBody News news) {
+        if (httpSession.getAttribute("Login") != null) {
+            return repository.save(news);
+        } else {
+            throw new RuntimeException("Need login");
+        }
+    }
+
     @RequestMapping("/getLast")
-    public List<News> getLast(HttpSession httpSession) {
+    @Transactional
+    public Flux<News> getLast(HttpSession httpSession) {
         httpSession.setAttribute("Login", "DAKARTA");
-        List<News> listNews = new ArrayList<>();
-        News news = new News();
-        news.setTitle("Title");
-        news.setText("Text Text Text Text Text Text Text ");
-        News news2 = new News();
-        news2.setTitle("Title");
-        news2.setText("Text Text Text Text Text Text Text ");
-        listNews.add(news);
-        listNews.add(news2);
-        return listNews;
+        return repository.findAll();
     }
 }
