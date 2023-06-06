@@ -187,6 +187,37 @@ hr {
     margin-top: 20px;
 }
 
+#h1post {
+    text-align: center;
+}
+
+.postbtn {
+    background-color: #0768f0;
+    color: black;
+    border-color: black;
+    border: solid;
+    border-radius: 30px;
+    cursor: pointer;
+    float: right;
+    font-family: monospace, Lucida console;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    border-color: black;
+    border: none;
+    border-radius: 15px;
+}
+
+.news_link {
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 30px;
+}
+
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {

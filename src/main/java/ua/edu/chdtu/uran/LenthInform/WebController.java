@@ -9,4 +9,9 @@ public class WebController {
     public String lastNews() {
         return "index";
     }
+
+    @GetMapping("/post")
+    public String post() {
+        return "post";
+    }
 }
