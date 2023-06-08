@@ -16,7 +16,6 @@
     <a href="/topic/economy">Економіка</a>
     <a href="/topic/technology">Технології</a>
     <a href="/authoris">Логін/Реєстрація</a>
-    <a><img src="/img/user.png"></a>
     <a href="/post">POST</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -24,13 +23,11 @@
 </div>
 <div class="page">
     <div class="favicon">
-        <a href="/" class="favicon">
-            <h2><img src="/img/favicon.ico">enth Inform</h2>
-        </a>
-    </div>
-    <h2 id="newnewstext">Останні новини</h2>
-    <div class="news-container"></div>
-
+            <h2>Кабінет користувача</h2>
+        <img src="">
+        <h2>Im'я користувача:</h2>
+        
+        <img src="/img/bookmark.png">
 
     <footer>
         <div id="socials">
@@ -57,24 +54,4 @@
             x.className = "topnav";
         }
     }
-
-
-    function getLastNews() {
-        $.ajax({
-            url: '/api/getLast',
-            type: "GET",
-            success: function (data) {
-                var result = "";
-                $.each(data, function (id, news) {
-                    result += '<div class="tecnews"><h1 class="newstitle">' + news.title + '</h1>' + '<a> <img src="' + news.pictureUrl + '" class="newsimg"></a>' + '<h3> <pre class="description">' + news.description + '</pre></h3>' + '<a>' + news.videoUrl + '</a>' + '</div>';
-                });
-                $('.news-container').html(result);
-            },
-            error: function (error) {
-                console.log(`Error ${error}`);
-            }
-        });
-    }
-
-    getLastNews();
-</script>
+</script>    
