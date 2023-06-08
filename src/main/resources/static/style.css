@@ -13,9 +13,28 @@ body {
 
 p, a, h1, h2, h3 {
     font-family: monospace, Lucida console;
+    text-decoration: none;
+    color: black;
 
 }
+.newstitle {
+    text-align: center;
+}
+.description{
+    text-wrap: unset;
+}
 
+.favicon {
+    margin-left: 45%;
+    margin-top: 4%;
+}
+.newsimg {
+    border-radius: 25px;
+    border-color: black;
+    border: solid;
+    width: 70%;
+    margin-left: 14%;
+}
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: rgba(71, 74, 81, 0.5);
@@ -56,18 +75,6 @@ p, a, h1, h2, h3 {
     border-radius: 30px;
 }
 
-
-.jug img {
-    max-width: 25px;
-}
-
-.jug, h2, a, img {
-    margin: 2%;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-}
-
 .tecnews {
     background-color: rgba(71, 74, 81, 0.5);
     border-radius: 20px;
@@ -98,7 +105,7 @@ footer #socials {
     align-items: center;
     flex-wrap: wrap;
     margin: 1%;
-
+    text-decoration: none;
 }
 
 footer #rights {
@@ -123,7 +130,6 @@ footer {
 .container {
 
 }
-
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
