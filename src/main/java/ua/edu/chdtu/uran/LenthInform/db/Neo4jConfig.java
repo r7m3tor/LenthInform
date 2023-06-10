@@ -9,9 +9,10 @@ import org.springframework.data.neo4j.config.AbstractReactiveNeo4jConfig;
 import org.springframework.data.neo4j.repository.config.EnableReactiveNeo4jRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import ua.edu.chdtu.uran.LenthInform.model.News;
+import ua.edu.chdtu.uran.LenthInform.model.User;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 @Configuration
 @EnableReactiveNeo4jRepositories
@@ -25,6 +26,9 @@ public class Neo4jConfig extends AbstractReactiveNeo4jConfig {
 
     @Override
     protected Collection<String> getMappingBasePackages() {
-        return Collections.singletonList(News.class.getPackage().getName());
+        ArrayList<String> list = new ArrayList<>();
+        list.add(News.class.getPackage().getName());
+        list.add(User.class.getPackage().getName());
+        return list;
     }
 }

@@ -4,6 +4,9 @@ import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
+import java.util.Collections;
+import java.util.List;
+
 @Node("News")
 public class News {
     @Id
@@ -13,6 +16,7 @@ public class News {
     private String description;
     private String pictureUrl = "";
     private String videoUrl = "";
+    private List<String> tags = Collections.emptyList();
 
     public News(String title, String description) {
         this.title = title;
@@ -57,5 +61,13 @@ public class News {
 
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 }

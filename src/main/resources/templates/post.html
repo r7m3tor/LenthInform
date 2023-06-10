@@ -18,7 +18,7 @@
 <textarea class="description" type="text" placeholder="Текст новини" name="news_text"></textarea>
 <input class="news_link, videoUrl" type="link" placeholder="Посилання на ВІДЕО" name="link">
 <input class="news_link, pictureUrl" type="link" placeholder="Посилання на КРТИНКУ" name="title_image">
-<select name="select">
+<select name="select" class="tags" multiple>
     <!--Supplement an id here instead of using 'name'-->
     <option value="war">Війна</option>
     <option value="economy">Економіка</option>
@@ -44,7 +44,7 @@
                 description: $(".description").val(),
 				pictureUrl: $(".pictureUrl").val(),
 				videoUrl: $(".videoUrl").val(),
-
+                tags:$(".tags").val(),
             }),
             success: function (result) {
                 alert('ok');

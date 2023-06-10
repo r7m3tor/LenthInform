@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,27 +10,34 @@
     <title>Lenth Inform</title>
 </head>
 <body>
+
 <div class="topnav" id="myTopnav">
-    <a href="/" class="active">Головна</a>
-    <a href="/topic/war">Війна</a>
-    <a href="/topic/economy">Економіка</a>
-    <a href="/topic/technology">Технології</a>
-    <a href="/authoris">Логін/Реєстрація</a>
-    <a><img src="/img/user.png"></a>
-    <a href="/post">POST</a>
+    <a href="/">Головна</a>
+    <a href="/topic/war" th:classappend="${#strings.equals(type,'war')} ? active : ''">Війна</a>
+    <a href="/topic/economy" th:classappend="${#strings.equals(type,'economy')} ? active : ''">Економіка</a>
+    <a href="/topic/technology" th:classappend="${#strings.equals(type,'technology')} ? active : ''">Технології</a>
+    <a href="/topic/authoris">Логін/Реєстрація</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
+
+
 <div class="page">
+
     <div class="favicon">
         <a href="/" class="favicon">
             <h2><img src="/img/favicon.ico">enth Inform</h2>
         </a>
     </div>
-    <h2 id="newnewstext">Останні новини</h2>
+    <h2 id="newnewstext">
+        <td th:switch="${type}">
+            <span th:case="'war'">Війна</span>
+            <span th:case="'economy'">Економіка</span>
+            <span th:case="'technology'">Технології</span>
+        </td>
+    </h2>
     <div class="news-container"></div>
-
 
     <footer>
         <div id="socials">
@@ -46,6 +53,8 @@
     </footer>
 
 </div>
+
+
 </body>
 </html>
 <script>
@@ -58,10 +67,9 @@
         }
     }
 
-
-    function getLastNews() {
+    function topic() {
         $.ajax({
-            url: '/api/getLast',
+            url: '/api/topic/[[${type}]]',
             type: "GET",
             success: function (data) {
                 var result = "";
@@ -81,5 +89,5 @@
         });
     }
 
-    getLastNews();
+    topic();
 </script>
