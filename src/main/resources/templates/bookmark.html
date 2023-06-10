@@ -57,7 +57,11 @@
             success: function (data) {
                 var result = "";
                 $.each(data, function (id, news) {
-                    result += '<div class="tecnews"><h1 class="newstitle">' + news.title + '</h1>' + '<a> <img src="' + news.pictureUrl + '" class="newsimg"></a>' + '<h3> <pre class="description">' + news.description + '</pre></h3>' + '<a>' + news.videoUrl + '</a>' + '</div>';
+                    result += '<div class="tecnews">' +
+                        '<h1 class="newstitle">' + news.title + '</h1>' +
+                        '<a> <img src="' + news.pictureUrl + '" class="newsimg"></a>' +
+                        '<h3> <pre class="description">' + news.description + '</pre></h3>' +
+                        '<a>' + news.videoUrl + '</a>' + '</div>';
                 });
                 $('.news-container').html(result);
             },
@@ -66,6 +70,5 @@
             }
         });
     }
-
     getLastNews();
 </script>
