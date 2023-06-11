@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Lenth Inform</title>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="/" class="active">Головна</a>
+  <a href="/topic/war">Війна</a>
+  <a href="/topic/economy">Економіка</a>
+  <a href="/topic/technology">Технології</a>
+  <a href="/authoris">Логін/Реєстрація</a>
+  <a><img src="/img/user.png"></a>
+  <a href="/post">POST</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div class="page">
+  <div class="jug">
+    <a href="index.html"><h2><img src="img/favicon.ico">enth Inform<h2/><a/>
+  </div>
+
+
+  <div class="auth">
+
+    <form action="action_page.php">
+      <div class="container">
+        <h1>Регістрація</h1>
+        <h3>Будь ласка заповніть форму для того щоб створити аккаунт</h3>
+        <hr>
+
+        <label for="email"><b>Електронна пошта</b></label>
+        <input type="text" placeholder="Введіть електронну пошта" name="email" required>
+
+        <label for="psw"><b>Пароль</b></label>
+        <input type="password" placeholder="Введіть пароль" name="psw" required>
+
+        <label for="psw-repeat"><b>Повтор паролю</b></label>
+        <input type="password" placeholder="Повторіть пароль" name="psw-repeat" required>
+        <hr>
+
+        <p>Створюючи аккаунт ви погоджуєтесь з <a href="privterms.html" id="privterms">Користивацькими Умовами</a>.</p>
+        <button type="submit" class="registerbtn"><p>Зарееструватись</p></button>
+      </div>
+
+      <div class="container signin">
+        <a href="#">У вас вже є аккаунт? Увійти.</a>
+      </div>
+    </form>
+
+  </div>
+  <footer><div id="socials">
+    <a href="#"> <img src="img/twitter.png"> Twitter</a>
+    <a href="#"> <img src="img/facebook.png"> Facebook</a>
+    <a href="#"> <img src="img/youtube.png"> Youtube</a>
+    <a href="#"> <img src="img/telegram.png"> Telegram</a>
+    <a href="#"> <img src="img/instagram.png"> Instagram</a>
+  </div>
+    <div id="rights">
+      Усі права застережені Lenth Inform &copy; 2023
+    </div>
+  </footer>
+
+
+</div>
+</body>
+</html>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
