@@ -1,5 +1,6 @@
 package ua.edu.chdtu.uran.LenthInform;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,5 +23,10 @@ public class WebController {
     @GetMapping("/post")
     public String post() {
         return "post";
+    }
+
+    @GetMapping("/authoris")
+    public String auth() {
+        return "authoris";
     }
 }
